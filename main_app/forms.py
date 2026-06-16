@@ -10,7 +10,7 @@ class ShiftReport(forms.ModelForm):
             'people_amount',
             'breakdowns',
             'assistance_needed',
-            'additional_comments'
+            'additiional_comments'
         ]
 
         widgets = {
@@ -21,7 +21,7 @@ class ShiftReport(forms.ModelForm):
                 'rows': 4,
                 'placeholder': 'Describe any breakdowns...'
             }),
-            'additional_comments': forms.Textarea(attrs={
+            'additiional_comments': forms.Textarea(attrs={
                 'rows': 4,
                 'placeholder': 'Additional notes for next shift...'
             }),
