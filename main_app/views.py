@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView
 from .models import Shift
 from django.urls import reverse
 from .forms import ShiftReport
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -38,10 +39,18 @@ class Sucess(TemplateView):
 #         print(self.kwargs)
 #         return reverse('success', kwargs={'pk': self.object.pk})
 
+# class ShiftReportCreate(CreateView):
+#     model = Shift
+#     form_class = ShiftReport
+#     template_name = "shift_report.html"
+
+
+#     def get_success_url(self):
+#         return reverse('success', kwargs={'pk': self.object.pk})
+    
+
 class ShiftReportCreate(CreateView):
     model = Shift
     form_class = ShiftReport
     template_name = "shift_report.html"
-
-    def get_success_url(self):
-        return reverse('success', kwargs={'pk': self.object.pk})
+    success_url = reverse_lazy('success')
